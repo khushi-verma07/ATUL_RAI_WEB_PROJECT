@@ -10,3 +10,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   setInterval(showNextImage, 3000);
 });
+
+// About Section
+ fetch("about.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("about-section").innerHTML = data;
+    })
+    .catch(error => console.error("Error loading About section:", error));
