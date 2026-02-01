@@ -1,4 +1,3 @@
-/* Basic Reset and Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -11,43 +10,37 @@ body {
  
 }
 
-/* Main Hero Container */
 .hero-container {
   min-height: 100vh;
   overflow: visible;
   width: 100%;
-  position: relative; /* This is the anchor for the absolute positioned carousel */
+  position: relative; 
   display: flex;
   flex-direction: column;
 }
-
-/* --- CAROUSEL STYLES --- */
-
 .carousel-container {
-  position: absolute; /* Take it out of the normal document flow */
+  position: absolute; 
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1; /* Place it behind the content */
+  z-index: 1; 
 }
 
 .carousel img {
-  position: absolute; /* Stack all images on top of each other */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Cover the entire screen without distortion */
-  opacity: 0; /* Hide all images by default */
-  transition: opacity 1.5s ease-in-out; /* Smooth fade effect */
+  object-fit: cover; 
+  opacity: 0; 
+  transition: opacity 1.5s ease-in-out;
 }
 
 .carousel img.active {
   opacity: 1; /* Show only the active image */
 }
-
-/* --- CONTENT STYLING (To make it visible on top of the carousel) --- */
 
 /* Header and Navigation */
 header {
@@ -58,10 +51,6 @@ header {
   width: 100%;
   position: relative; /* Ensure it stays on top */
   z-index: 2;
-}
-
-header:hover {
-  background-color: rgba(42, 18, 1);
 }
 
 .logo {
@@ -79,7 +68,7 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: #fff; /* Changed to white for readability */
+  color: black; /* Changed to white for readability */
   font-weight: 600;
   font-size: 0.9rem;
   transition: color 0.3s;

@@ -14,20 +14,19 @@ html {
 
 /* About Section */
 .about-section {
-  padding: 60px 20px;
-  background-color: #fef1d7;
+  /* padding: 60px ; */
+  background-color: #F2F0EF;
   display: flex;
   justify-content: center;
+  margin-bottom: 0;
 }
 
 /* Parent Card */
 .parent-card {
   display: flex;
   align-items: stretch; /* ✅ ensures both children match height */
-  gap: 30px;
-  max-width: 1200px;
   width: 100%;
-  background-color: #fff;
+  background-color: #F2F0EF;
   padding: 30px;
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
