@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap");
 
 html {
-  background-color: #fef1d7;
+  background-color: #F2F0EF;
   overflow-y: hidden;
 }
 
@@ -14,22 +14,23 @@ html {
 
 /* About Section */
 .about-section {
-  /* padding: 60px ; */
   background-color: #F2F0EF;
   display: flex;
   justify-content: center;
-  margin-bottom: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /* Parent Card */
 .parent-card {
   display: flex;
-  align-items: stretch; /* ✅ ensures both children match height */
+  align-items: stretch;
   width: 100%;
   background-color: #F2F0EF;
   padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  box-shadow: none;
+  gap: 30px;
 }
 
 /* Individual Cards */
@@ -45,13 +46,14 @@ html {
 .image-card {
   display: flex;
   align-items: stretch;
+  flex: 1;
 }
 
 .image-card img {
   width: 100%;
-  height: 100%; /* ✅ makes the image fill the full height of its container */
+  height: 100%;
   border-radius: 15px;
-  object-fit: cover; /* ✅ keeps the image proportionate but cropped to fit */
+  object-fit: cover;
 }
 
 /* Content Card */
@@ -60,12 +62,13 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex: 1;
 }
 
 .content-card h2 {
-  font-size: 32px;
+  font-size: 28px;
   color: #660505;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .highlight {
@@ -77,10 +80,10 @@ html {
 }
 
 .content-card p {
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: 15px;
+  line-height: 1.7;
   color: #333;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .content-card p strong {

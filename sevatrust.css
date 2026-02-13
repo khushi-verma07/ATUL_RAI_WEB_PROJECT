@@ -1,0 +1,124 @@
+:root {
+    --primary-orange: #ff8c42;
+    --text-dark: #2c3e50;
+    --text-light: #5f6368;
+    --bg-color: #F2F0EF;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow: hidden;
+}
+
+/* Header Section */
+.main-header {
+    text-align: center;
+    margin-bottom: 10px;
+    padding-top: 0;
+}
+
+.main-header h1 {
+    color: var(--primary-orange);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.underline {
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-orange);
+    margin: 0 auto 20px;
+}
+
+.quote {
+    font-style: italic;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* Intro Card */
+.intro-card {
+    background: var(--white);
+    max-width: 100%;
+    margin: 70px;
+    padding: 15px 80px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.intro-card h2 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    color: #8B4513;
+}
+
+.intro-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+/* Focus Areas Grid */
+.focus-section {
+    max-width: 100%;
+    margin: 20px;
+    padding: 0 40px;
+    text-align: center;
+}
+
+.section-title {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    color: #8B4513;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.focus-card {
+    background: var(--white);
+    padding: 20px 20px;
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.focus-card:hover {
+    transform: translateY(-5px);
+}
+
+.icon {
+    font-size: 1.5rem;
+    background: #fff5ed;
+    color: var(--primary-orange);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.focus-card h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.focus-card p {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    margin: 0;
+}
