@@ -44,3 +44,49 @@ if (document.querySelector('.timeline')) {
     });
   });
 }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const images = document.querySelectorAll(".carousel img");
+  let currentIndex = 0;
+
+  function showNextImage() {
+    // Hide the current image
+    images[currentIndex].classList.remove("active");
+
+    // Calculate the index of the next image, looping back to the start
+    currentIndex = (currentIndex + 1) % images.length;
+
+    // Show the next image
+    images[currentIndex].classList.add("active");
+  }
+
+  // Set an interval to call the showNextImage function
+  // It changes the image every 5 seconds (5000 milliseconds)
+  setInterval(showNextImage, 3000);
+});
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const images = document.querySelectorAll(".carousel img");
+  let currentIndex = 0;
+
+  function showNextImage() {
+    images[currentIndex].classList.remove("active");
+    currentIndex = (currentIndex + 1) % images.length;
+    images[currentIndex].classList.add("active");
+  }
+
+  setInterval(showNextImage, 3000);
+});
+
+// About Section
+ fetch("about.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("about-section").innerHTML = data;
+    })
+    .catch(error => console.error("Error loading About section:", error));

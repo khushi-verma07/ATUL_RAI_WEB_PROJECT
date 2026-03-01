@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Carousel</title>
+  <link rel="stylesheet" href="carousel.css" />
+</head>
+<body>
+
+  <div class="carousel-container">
+    <h1>Key Initiatives</h1>
+
+    <div class="carousel">
+      <!-- Image Slides -->
+      <div class="slides">
+        <img src="images/carousal-1.jpg" alt="Image 1">
+        <img src="images/carousal-2.jpg" alt="Image 2">
+        <img src="images/carousal-3.jpg" alt="Image 3">
+        <img src="images/carousal-4.jpg" alt="Image 4">
+      </div>
+
+      <!-- Navigation Arrows -->
+      <button class="arrow left-arrow" onclick="changeSlide(-1)">&#10094;</button>
+      <button class="arrow right-arrow" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+  </div>
+
+  <!-- Additional Content Section -->
+  <section class="trust-section">
+   
+    <p>
+      The Rameshwaram Seva Trust is dedicated to serving the community through various initiatives aimed at improving
+      the quality of life for individuals and families in need. Our programs focus on education, healthcare, and social
+      welfare, striving to create a positive impact in the lives of those we serve.
+    </p>
+
+    <div class="white-box">
+      <h2>Our Mission</h2>
+      <p>
+        Our mission is to empower communities by providing equal access to education, healthcare, and essential
+        resources. We believe in uplifting lives through compassion, transparency, and consistent efforts to make
+        a difference.
+      </p>
+    </div>
+  </section>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelector('.slides');
+    const totalSlides = document.querySelectorAll('.slides img').length;
+
+    function showSlide(n) {
+      currentSlide = (n + totalSlides) % totalSlides;
+      slides.style.marginLeft = `-${currentSlide * 100}%`;
+    }
+
+    function changeSlide(direction) {
+      showSlide(currentSlide + direction);
+    }
+  </script>
+
+</body>
+</html>

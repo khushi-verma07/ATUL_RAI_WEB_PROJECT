@@ -12,7 +12,6 @@ html {
   font-family: "Poppins", sans-serif;
 }
 
-/* About Section */
 .about-section {
   background-color: #F2F0EF;
   display: flex;
@@ -21,7 +20,6 @@ html {
   padding: 0;
 }
 
-/* Parent Card */
 .parent-card {
   display: flex;
   align-items: stretch;
@@ -33,7 +31,6 @@ html {
   gap: 30px;
 }
 
-/* Individual Cards */
 .card {
   flex: 1;
   border-radius: 15px;
@@ -42,7 +39,6 @@ html {
   flex-direction: column;
 }
 
-/* Image Card */
 .image-card {
   display: flex;
   align-items: stretch;
@@ -56,7 +52,6 @@ html {
   object-fit: cover;
 }
 
-/* Content Card */
 .content-card {
   padding: 30px;
   display: flex;
@@ -90,7 +85,6 @@ html {
   font-weight: bold;
 }
 
-/* Responsive */
 @media (max-width: 900px) {
   .parent-card {
     flex-direction: column;
@@ -98,7 +92,7 @@ html {
   }
 
   .image-card img {
-    height: auto; /* ✅ makes image natural height on mobile */
+    height: auto; 
   }
 
   .content-card h2 {
