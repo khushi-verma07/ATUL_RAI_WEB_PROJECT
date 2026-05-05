@@ -137,3 +137,28 @@ body {
   line-height: 1.8;
   font-size: 1rem;
 }
+
+@media (max-width: 768px) {
+  html, body {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+  .carousel {
+    height: 250px;
+  }
+  .carousel-container h1 {
+    font-size: 1.8rem;
+  }
+  .trust-section {
+    margin: 30px auto;
+  }
+  .trust-section h1 {
+    font-size: 1.6rem;
+  }
+  .white-box {
+    padding: 20px;
+  }
+  .white-box h2 {
+    font-size: 1.3rem;
+  }
+}

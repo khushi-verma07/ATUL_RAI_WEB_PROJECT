@@ -37,6 +37,12 @@ html {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .image-card {
@@ -97,5 +103,20 @@ html {
 
   .content-card h2 {
     margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  html, body {
+    overflow: hidden;
+  }
+  .parent-card {
+    padding: 15px;
+  }
+  .content-card {
+    padding: 15px;
+  }
+  .content-card h2 {
+    font-size: 24px;
   }
 }

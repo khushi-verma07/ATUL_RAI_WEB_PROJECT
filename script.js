@@ -1,23 +1,65 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Carousel Logic
   const images = document.querySelectorAll(".carousel img");
-  let currentIndex = 0;
-
-  function showNextImage() {
-    images[currentIndex].classList.remove("active");
-    currentIndex = (currentIndex + 1) % images.length;
-    images[currentIndex].classList.add("active");
+  if (images.length > 0) {
+    let currentIndex = 0;
+    function showNextImage() {
+      images[currentIndex].classList.remove("active");
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].classList.add("active");
+    }
+    setInterval(showNextImage, 6000);
   }
 
-  setInterval(showNextImage, 3000);
+  // Hamburger Menu
+  const menuToggle = document.getElementById('mobile-menu');
+  const navMenu = document.getElementById('nav-menu');
+
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+  }
+
+  // Scroll Reveal Animations for premium feel
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal-active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  const sections = document.querySelectorAll('section');
+  sections.forEach(section => {
+    section.classList.add('reveal-hidden');
+    observer.observe(section);
+  });
 });
 
-// About Section
- fetch("about.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("about-section").innerHTML = data;
-    })
-    .catch(error => console.error("Error loading About section:", error));
+// About Section Load
+fetch("about.html")
+  .then(response => response.text())
+  .then(data => {
+    const aboutSec = document.getElementById("about-section");
+    if (aboutSec) aboutSec.innerHTML = data;
+  })
+  .catch(error => console.error("Error loading About section:", error));
 
 // Policy page year functionality
 if (document.querySelector('.timeline')) {
@@ -27,66 +69,16 @@ if (document.querySelector('.timeline')) {
   const imageCaptionText = document.getElementById('image-caption-text');
 
   yearElements.forEach(year => {
-    year.addEventListener('click', function() {
-      // Remove active class from all years
+    year.addEventListener('click', function () {
       yearElements.forEach(y => y.classList.remove('active'));
-      // Add active class to clicked year
       this.classList.add('active');
-      
-      // Update content
+
       yearDescription.textContent = this.dataset.year;
       journeyImage.src = this.dataset.image;
       imageCaptionText.textContent = this.dataset.caption;
-      
-      // Update description paragraph
+
       const descriptionP = yearDescription.nextElementSibling;
       descriptionP.textContent = this.dataset.description;
     });
   });
 }
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  const images = document.querySelectorAll(".carousel img");
-  let currentIndex = 0;
-
-  function showNextImage() {
-    // Hide the current image
-    images[currentIndex].classList.remove("active");
-
-    // Calculate the index of the next image, looping back to the start
-    currentIndex = (currentIndex + 1) % images.length;
-
-    // Show the next image
-    images[currentIndex].classList.add("active");
-  }
-
-  // Set an interval to call the showNextImage function
-  // It changes the image every 5 seconds (5000 milliseconds)
-  setInterval(showNextImage, 3000);
-});
-
-
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  const images = document.querySelectorAll(".carousel img");
-  let currentIndex = 0;
-
-  function showNextImage() {
-    images[currentIndex].classList.remove("active");
-    currentIndex = (currentIndex + 1) % images.length;
-    images[currentIndex].classList.add("active");
-  }
-
-  setInterval(showNextImage, 3000);
-});
-
-// About Section
- fetch("about.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("about-section").innerHTML = data;
-    })
-    .catch(error => console.error("Error loading About section:", error));

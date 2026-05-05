@@ -130,3 +130,33 @@ body {
     from { opacity: 0; transform: translate(-50%, -40%); }
     to { opacity: 1; transform: translate(-50%, -50%); }
 }
+
+@media (max-width: 768px) {
+    body {
+        overflow-y: auto !important;
+        overflow: auto;
+    }
+    .container, .background-image {
+        height: 100vh;
+    }
+    .header {
+        left: 50%;
+        width: 100%;
+        text-align: center;
+    }
+    .header h1 {
+        font-size: 2em;
+    }
+    .text-content {
+        left: 50%;
+        width: 80%;
+        padding: 15px;
+    }
+    .text-content h2 {
+        font-size: 2em;
+    }
+    .timeline {
+        width: 90%;
+        padding: 10px;
+    }
+}

@@ -239,3 +239,21 @@ footer {
     font-size: 1.2rem;
   }
 }
+
+@media (max-width: 768px) {
+  body {
+    overflow: hidden;
+  }
+  header {
+    padding: 40px 15px;
+  }
+  .blog-container {
+    padding: 20px 15px;
+  }
+  .blog-topics {
+    padding: 30px 15px;
+  }
+  .quote-section {
+    padding: 40px 20px;
+  }
+}

@@ -139,6 +139,21 @@ h2 {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .contact-grid { grid-template-columns: 1fr; }
-    .contact-content { padding: 40px 20px; }
+    body {
+        overflow: hidden;
+    }
+    .contact-grid { 
+        grid-template-columns: 1fr;
+        padding-left: 0;
+    }
+    .contact-content { padding: 30px 20px; }
+    .hero-banner h1 {
+        font-size: 1.8rem;
+    }
+    .intro-text {
+        margin-bottom: 30px;
+    }
+    .social-card {
+        max-width: 100%;
+    }
 }

@@ -46,18 +46,47 @@
   </section>
 
   <script>
-    let currentSlide = 0;
     const slides = document.querySelector('.slides');
-    const totalSlides = document.querySelectorAll('.slides img').length;
-
-    function showSlide(n) {
-      currentSlide = (n + totalSlides) % totalSlides;
-      slides.style.marginLeft = `-${currentSlide * 100}%`;
-    }
+    let isTransitioning = false;
 
     function changeSlide(direction) {
-      showSlide(currentSlide + direction);
+      if (isTransitioning) return;
+      isTransitioning = true;
+
+      if (direction === 1) {
+        // Next
+        slides.style.transition = 'margin-left 0.8s ease-in-out';
+        slides.style.marginLeft = '-100%';
+      } else {
+        // Prev
+        slides.style.transition = 'none';
+        slides.prepend(slides.lastElementChild);
+        slides.style.marginLeft = '-100%';
+        
+        // Force reflow
+        void slides.offsetWidth;
+        
+        slides.style.transition = 'margin-left 0.8s ease-in-out';
+        slides.style.marginLeft = '0';
+      }
     }
+
+    slides.addEventListener('transitionend', () => {
+      if (slides.style.marginLeft === '-100%') {
+        // After next slide transition finishes
+        slides.style.transition = 'none';
+        slides.appendChild(slides.firstElementChild);
+        slides.style.marginLeft = '0';
+      }
+      isTransitioning = false;
+    });
+
+    // Optional: Auto slide every 6 seconds
+    setInterval(() => {
+      if(!isTransitioning) {
+        changeSlide(1);
+      }
+    }, 6000);
   </script>
 
 </body>

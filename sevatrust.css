@@ -92,11 +92,14 @@ body {
     border-radius: 12px;
     text-align: left;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-top: 3px solid transparent;
 }
 
 .focus-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border-top: 3px solid var(--primary-orange);
 }
 
 .icon {
@@ -121,4 +124,23 @@ body {
     color: var(--text-light);
     font-size: 0.85rem;
     margin: 0;
+}
+
+@media (max-width: 768px) {
+    body {
+        overflow: hidden;
+    }
+    .intro-card {
+        margin: 20px;
+        padding: 20px;
+    }
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    .focus-section {
+        padding: 0 20px;
+    }
+    .main-header h1 {
+        font-size: 2rem;
+    }
 }
